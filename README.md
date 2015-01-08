@@ -8,7 +8,7 @@
 
 This configuration does not ship any themes, but you can grab one from some of these places:
 
-  * https://bitbucket.org/ivan_kolmycheck/autumn-forest/
+  * [Autumn Forest](https://github.com/ivan-kolmychek/autumn-forest)
 
 ## License
 
