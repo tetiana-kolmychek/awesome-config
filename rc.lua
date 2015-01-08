@@ -404,6 +404,7 @@ awful.rules.rules = {
 	-- 6
 	{ rule = { class = "Smplayer" },  properties = { tag = tags[1][6] }},
   { rule = { class = "mpv" }, properties = { tag = tags[1][6], ontop = true, floating = true }},
+  { rule = { class = 'Minitube' }, properties = { tag = tags[1][6], ontop = true, floating = true }},
 	-- 7
   { rule = { class = "VirtualBox" },  properties = { tag = tags[1][7] }},
 	-- 8
