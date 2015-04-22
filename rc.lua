@@ -425,7 +425,9 @@ awful.rules.rules = {
 	{ rule = { class = "psi" }, properties = { tag = tags[1][0xf] }},
 	-- Floating apps
 	{ rule = { class = "Plasma" }, properties = { floating = true }},
-	{ rule = { class = "pinentry" }, properties = { floating = true, fullscreen = false }}
+	{ rule = { class = "pinentry" }, properties = { floating = true, fullscreen = false }},
+  -- Fullscreen by default
+  { rule = { class = 'Plugin-container' }, properties = { floating = true, fullscreen = true }}
 }
 -- }}}
 
