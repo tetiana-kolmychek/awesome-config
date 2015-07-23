@@ -390,43 +390,20 @@ awful.rules.rules = {
 	-- Application rules
 	-- ==== Tags ====
 	-- NOTE In the xprop output, the class is the second value of the WM_CLASS property. 
-	-- 1
-	{ rule = { class = "Konsole" },  properties = { tag = tags[1][1] }},
-	-- 2
+	{ rule = { class = "konsole" },  properties = { tag = tags[1][1], opacity = 0.9 }},
 	{ rule = { class = "Firefox" },  properties = { tag = tags[1][2] }},
-	-- 3
 	{ rule = { class = "Dolphin" },  properties = { tag = tags[1][3] }},
-	-- 4
-	{ rule = { class = "Kate" },  properties = { tag = tags[1][4] }},
-	-- 5
 	{ rule = { class = "Chromium" }, properties = { tag = tags[1][5], floating = false }},
-	{ rule = { class = "Fbreader" },  properties = { tag = tags[1][5] }},
-	-- 6
 	{ rule = { class = "Smplayer" },  properties = { tag = tags[1][6] }},
   { rule = { class = "mpv" }, properties = { tag = tags[1][6], ontop = true, floating = true }},
   { rule = { class = 'Minitube' }, properties = { tag = tags[1][6], ontop = true, floating = true }},
-	-- 7
   { rule = { class = "VirtualBox" },  properties = { tag = tags[1][7] }},
-	-- 8
 	{ rule = { class = "Keepassx" },  properties = { tag = tags[1][8] }},
-	-- 9
-	{ rule = { class = "Clementine" },  properties = { tag = tags[1][9] }},
-	-- 0xA
-	{ rule = { class = "Akregator" },  properties = { tag = tags[1][0xa] }},
-	-- 0xB
-	{ rule = { class = "Thg" },  properties = { tag = tags[1][0xb], floating = false }},
-	-- 0xC
 	{ rule = { class = "wpa_Gui" },  properties = { tag = tags[1][0xc] }},
-	-- 0xD
 	{ rule = { class = "Thunderbird" }, properties = { tag = tags[1][0xd], floating = false, }},
-	-- 0xE
 	{ rule = { class = "Skype" }, properties = { tag = tags[1][0xe] }},
-	-- 0xF
-	{ rule = { class = "psi" }, properties = { tag = tags[1][0xf] }},
-	-- Floating apps
 	{ rule = { class = "Plasma" }, properties = { floating = true }},
 	{ rule = { class = "pinentry" }, properties = { floating = true, fullscreen = false }},
-  -- Fullscreen by default
   { rule = { class = 'Plugin-container' }, properties = { floating = true, fullscreen = true }}
 }
 -- }}}
