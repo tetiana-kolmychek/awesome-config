@@ -396,14 +396,13 @@ awful.rules.rules = {
 	{ rule = { class = "Chromium" }, properties = { tag = tags[1][5], floating = false }},
 	{ rule = { class = "Smplayer" },  properties = { tag = tags[1][6] }},
   { rule = { class = "mpv" }, properties = { tag = tags[1][6], ontop = true, floating = true }},
-  { rule = { class = 'Minitube' }, properties = { tag = tags[1][6], ontop = true, floating = true }},
+  { rule = { class = "ksshaskpass" }, properties = { tag = tags[1][4], urgent = true } },
   { rule = { class = "VirtualBox" },  properties = { tag = tags[1][7] }},
 	{ rule = { class = "Keepassx" },  properties = { tag = tags[1][8] }},
 	{ rule = { class = "wpa_Gui" },  properties = { tag = tags[1][0xc] }},
 	{ rule = { class = "Thunderbird" }, properties = { tag = tags[1][0xd], floating = false, }},
 	{ rule = { class = "Skype" }, properties = { tag = tags[1][0xe] }},
 	{ rule = { class = "Plasma" }, properties = { floating = true }},
-	{ rule = { class = "pinentry" }, properties = { floating = true, fullscreen = false }},
   { rule = { class = 'Plugin-container' }, properties = { floating = true, fullscreen = true }}
 }
 -- }}}
