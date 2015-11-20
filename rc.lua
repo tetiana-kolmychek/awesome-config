@@ -81,6 +81,7 @@ my_taglist.buttons = awful.util.table.join(
 my_tasklist = {}
 my_tasklist.buttons = awful.util.table.join(
                      awful.button({ }, 1, function (c)
+                                              c.minimized = false
                                               if not c:isvisible() then
                                                   awful.tag.viewonly(c:tags()[1])
                                               end
@@ -160,18 +161,16 @@ globalkeys = awful.util.table.join(
 --     awful.key({ modkey, "Control", "Shift" }, "q", awesome.quit),  
     awful.key({ modkey,           }, "]",     function () awful.tag.incmwfact( 0.05)    end),
     awful.key({ modkey,           }, "[",     function () awful.tag.incmwfact(-0.05)    end),
---     awful.key({ modkey, "Shift"   }, "h",     function () awful.tag.incnmaster( 1)      end),
---     awful.key({ modkey, "Shift"   }, "l",     function () awful.tag.incnmaster(-1)      end),
     awful.key({ modkey, "Control" }, "]",     function () awful.tag.incncol( 1)         end),
     awful.key({ modkey, "Control" }, "[",     function () awful.tag.incncol(-1)         end),
     awful.key({ modkey,           }, "space", function () awful.layout.inc(layouts,  1) end),
     awful.key({ modkey, "Shift" }, "space", function () awful.layout.inc(layouts, -1) end),
+    awful.key({ modkey, "Control" }, "n", awful.client.restore),
 
     -- Application bindings.
 	awful.key({ modkey,	}, "l", function() awful.util.spawn(screenlockercommand) end),
 	awful.key({ 		}, "XF86Sleep", function() awful.util.spawn_with_shell(lockandsuspendcommand); end),
 	awful.key({ modkey,	}, "x", function() awful.util.spawn("xrandr --auto") end),
-	-- awful.key({ modkey, "Control"}, "h", function() naughty.notify({ title = "Shortcuts", text= "Package.path:\n" .. package.path .. "" , timeout=80});  end),
 
     -- Prompt
     awful.key({ modkey },            "r",     function () my_promptbox[mouse.screen]:run() end)
@@ -191,10 +190,8 @@ clientkeys = awful.util.table.join(
 											});
 										end;
     end),
---     awful.key({ "Control", ""   }, "q",      function (c) c:kill()                         end),
     awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ),
-    awful.key({ modkey,           }, "o",      awful.client.movetoscreen                        ),
-    awful.key({ modkey, "Shift"   }, "r",      function (c) c:redraw()                       end)
+    awful.key({ modkey,           }, "o",      awful.client.movetoscreen                        )
 )
 
 keynumber = 0
