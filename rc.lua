@@ -163,7 +163,6 @@ globalkeys = awful.util.table.join(
 
     -- Standard program
     awful.key({ modkey, "Control" }, "r", awesome.restart),
---     awful.key({ modkey, "Control", "Shift" }, "q", awesome.quit),  
     awful.key({ modkey,           }, "]",     function () awful.tag.incmwfact( 0.05)    end),
     awful.key({ modkey,           }, "[",     function () awful.tag.incmwfact(-0.05)    end),
     awful.key({ modkey, "Control" }, "]",     function () awful.tag.incncol( 1)         end),
@@ -183,7 +182,7 @@ globalkeys = awful.util.table.join(
 
 clientkeys = awful.util.table.join(
     awful.key({ modkey, }, "=",      function (c) c.fullscreen = not c.fullscreen  end),
-	    awful.key({ modkey, ""   }, "q",      function (c)  
+	    awful.key({ modkey, "Shift"   }, "q",      function (c)  
 										if (killable(c.class)) then
 										c:kill() 
 										else 
