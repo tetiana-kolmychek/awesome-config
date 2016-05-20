@@ -89,8 +89,11 @@ my_tasklist.buttons = awful.util.table.join(
                                               c:raise()
                                           end))
 
--- batterywidget = wibox.widget.textbox()
--- batterywidget:set_text("[ battery ]")
+memorywidget = wibox.widget.textbox()
+memorywidget:set_text("[ memory ]")
+
+batterywidget = wibox.widget.textbox()
+batterywidget:set_text("[ battery ]")
 
 clockwidget = wibox.widget.textbox()
 clockwidget:set_text(" [ clock (20 seconds) ] ")
@@ -126,6 +129,8 @@ for s = 1, screen.count() do
 	left_layout:add(my_promptbox[s]);	
 
 	local right_layout = wibox.layout.fixed.horizontal();
+  right_layout:add(memorywidget);
+  right_layout:add(batterywidget);
 	right_layout:add(videoTemperatureWidget);
 	right_layout:add(temperatureWidget);
 	right_layout:add(clockwidget);
