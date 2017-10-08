@@ -11,6 +11,5 @@ If it works for me, it does not mean, that it will work for you. ;)
 This config is based on original Awesome 4.x configuration.
 So, it is licensed under [GNU GPLv2 license][gpl-v2].
 
-[autumn-forest]: https://github.com/ivan-kolmychek/autumn-forest
 [gpl-v2]: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
