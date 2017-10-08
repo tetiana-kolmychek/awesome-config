@@ -6,13 +6,6 @@
 
 If it works for me, it does not mean, that it will work for you. ;)
 
-## Themes
-
-This configuration does not ship any themes, but you can grab one from some of
-these places:
-
-  * [Autumn Forest][autumn-forest]
-
 ## License
 
 This config is based on original Awesome 4.x configuration.
