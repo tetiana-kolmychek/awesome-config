@@ -11,6 +11,10 @@ local naughty = require("naughty")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup").widget
 
+--- pathes
+local homedir_path = os.getenv("HOME")
+local scripts_path = homedir_path
+
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -330,7 +334,13 @@ globalkeys = awful.util.table.join(
               {description = "lua execute prompt", group = "awesome"}),
     -- Menubar
     awful.key({ modkey }, "p", function() menubar.show() end,
-              {description = "show the menubar", group = "launcher"})
+              {description = "show the menubar", group = "launcher"}),
+
+    -- Custom commands
+    awful.key({ modkey }, "#67", function() awful.spawn.with_shell(scripts_path .. "/approve.sh | xsel -bi") end,
+              {description = "put random PR approval markdown into clipboard", group = "launcher"}),
+    awful.key({ modkey }, "#68", function() awful.spawn.with_shell(scripts_path .. "/note-signature.sh | xsel -bi") end,
+              {description = "put note signature into clipboard", group = "launcher"})
 )
 
 clientkeys = awful.util.table.join(
