@@ -36,12 +36,12 @@ function setWallpaper(screen)
 	end
 end
 
-function updateClock() 
+function updateClock()
 	local text = " " .. os.date("%a %Y-%m-%d %H:%M") .. " ";
 	clockwidget:set_text(text)
 end
 
-function getSensorTemperature(sensor, what) 
+function getSensorTemperature(sensor, what)
 	local handle = io.popen('echo -n `sensors ' .. sensor .. ' | fgrep "' .. what .. '"  | awk \'{print $2}\' | head -n 1`')
 	local result = handle:read("*a")
 	handle:close()
@@ -54,10 +54,10 @@ function updateCpuTemperatureWidget()
 	temperatureWidget:set_text(" cpu: " .. temperature .. " ")
 end
 
-function updateGpuTemperatureWidget() 
+function updateGpuTemperatureWidget()
 	-- TODO make CPU sensor name tuneable in rc.lua
 	local temperature = getSensorTemperature('dell_smm-virtual-0', 'GPU')
-	videoTemperatureWidget:set_text(" gpu: " .. temperature .. " ") 
+	videoTemperatureWidget:set_text(" gpu: " .. temperature .. " ")
 end
 
 function updateMemoryWidget()
@@ -65,7 +65,7 @@ function updateMemoryWidget()
   memorywidget:set_text(" memory: " .. info .. " ");
 end
 
-function updateBatteryWidget() 
+function updateBatteryWidget()
 	local info = batteryInfo();
 	batterywidget:set_text(" battery: " .. info .. " ");
 end
