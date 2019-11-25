@@ -45,8 +45,8 @@ end
 beautiful.init(awful.util.get_configuration_dir() .. "themes/current/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "konsole"
-editor = os.getenv("EDITOR") or "vim"
+terminal = "alacritty"
+editor = os.getenv("EDITOR") or "nvim"
 editor_cmd = terminal .. " -e " .. editor
 
 -- Default modkey.
@@ -176,18 +176,18 @@ awful.screen.connect_for_each_screen(function(s)
     -- Wallpaper
     set_wallpaper(s)
 
-    local wallpaper_change_time = 30
-    local wallpaper_change_timer = gears.timer {
-      timeout = wallpaper_change_time
-    }
-    wallpaper_change_timer:connect_signal("timeout", function()
-      set_wallpaper(s)
-      wallpaper_change_timer:stop()
-      wallpaper_change_timer.timeout = wallpaper_change_time
-      wallpaper_change_timer:start()
-    end)
+    -- local wallpaper_change_time = 30
+    -- local wallpaper_change_timer = gears.timer {
+    --   timeout = wallpaper_change_time
+    -- }
+    -- wallpaper_change_timer:connect_signal("timeout", function()
+    --   set_wallpaper(s)
+    --   wallpaper_change_timer:stop()
+    --   wallpaper_change_timer.timeout = wallpaper_change_time
+    --   wallpaper_change_timer:start()
+    -- end)
 
-    wallpaper_change_timer:start()
+    -- wallpaper_change_timer:start()
 
     -- Each screen has its own tag table.
     awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f" }, s, awful.layout.layouts[1])
@@ -523,8 +523,8 @@ awful.rules.rules = {
       properties = { screen = 1, tag = "4", urgent = true } },
     { rule = { class = "VirtualBox" },
       properties = { screen = 1, tag = "7" } },
-    { rule = { class = "Keepassx" },
-      properties = { screen = 1, tag = "8" } },
+--    { rule = { class = "Keepassx" },
+--      properties = { screen = 1, tag = "8" } },
     { rule = { class = 'Pavucontrol' },
       properties = { screen = 1, tag = '9' } },
     { rule = { class = 'Vncviewer' },
