@@ -347,7 +347,43 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey }, "#67", function() awful.spawn.with_shell(scripts_path .. "/approve.sh | xsel -bi") end,
               {description = "put random PR approval markdown into clipboard", group = "launcher"}),
     awful.key({ modkey }, "#68", function() awful.spawn.with_shell(scripts_path .. "/note-signature.sh | xsel -bi") end,
-              {description = "put note signature into clipboard", group = "launcher"})
+              {description = "put note signature into clipboard", group = "launcher"}),
+
+    -- Keyboard layouts
+    awful.key({ "Control", "Shift" }, "1", function()
+      awful.spawn.with_shell("setxkbmap -layout us")
+    end, {description = "switch to US keyboard layout", group = "keyboard layout"}),
+    awful.key({ "Control", "Shift" }, "2", function()
+      awful.spawn.with_shell("setxkbmap -layout ua")
+    end, {description = "switch to UA keyboard layout", group = "keyboard layout"}),
+    awful.key({ "Control", "Shift" }, "3", function()
+      awful.spawn.with_shell("setxkbmap -layout ru")
+    end, {description = "switch to RU keyboard layout", group = "keyboard layout"}),
+    awful.key({ "Control", "Shift" }, "4", function()
+      awful.spawn.with_shell("setxkbmap -layout se")
+    end, {description = "switch to SE keyboard layout", group = "keyboard layout"}),
+
+    -- Decrease brightness
+    awful.key({ }, "#232", function()
+      awful.spawn.with_shell("xbacklight -dec 5")
+    end, {description = "decrease brightness", group = "brightness"}),
+    -- Increase brightness
+    awful.key({ }, "#233", function()
+      awful.spawn.with_shell("xbacklight -inc 5")
+    end, {description = "increase brightness", group = "brightness"}),
+
+    -- Mute volume
+    awful.key({ }, "#121", function()
+      awful.spawn.with_shell("pamixer --toggle-mute")
+    end, {description = "mute volume", group = "volume"}),
+    -- Decrease volume
+    awful.key({ }, "#122", function()
+      awful.spawn.with_shell("pamixer --decrease 5")
+    end, {description = "decrease volume", group = "volume"}),
+    -- Increase volume
+    awful.key({ }, "#123", function()
+      awful.spawn.with_shell("pamixer --increase 5")
+    end, {description = "increase volume", group = "volume"})
 )
 
 clientkeys = awful.util.table.join(
