@@ -222,7 +222,13 @@ awful.screen.connect_for_each_screen(function(s)
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             mykeyboardlayout,
-            require("battery-widget") {},
+            require("battery-widget") {
+              percent_colors = {
+                { 25, "red"   },
+                { 50, "orange"},
+                {999, "#bbffbb" },
+              }
+            },
             wibox.widget.systray(),
             mytextclock,
             s.mylayoutbox,
