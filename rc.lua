@@ -549,7 +549,7 @@ awful.rules.rules = {
     -- ==== Tags ====
     -- NOTE In the xprop output, the class is the second value of the
     -- WM_CLASS property.
-    { rule = { class = "konsole" },
+    { rule = { class = "Alacritty" },
       properties = { screen = 1, tag = "1", opacity = 0.9 } },
     { rule = { class = "Firefox" },
       properties = { screen = 1, tag = "2" } },
@@ -557,7 +557,7 @@ awful.rules.rules = {
       properties = { screen = 1, tag = "3" } },
     { rule = { class = "Chromium" },
       properties = { screen = 1, tag = "5", floating = false } },
-    { rule = { class = "Smplayer" },
+    { rule = { class = "smplayer" },
       properties = { screen = 1, tag = "6" } },
     { rule = { class = "mpv" },
       properties = { screen = 1, tag = "6", ontop = true, floating = true }},
